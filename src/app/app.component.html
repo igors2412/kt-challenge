@@ -1,1 +1,14 @@
-yolo
+<div class="app" *ngIf="controlDefinitions">
+    <section class="form" [formGroup]="form">
+        <div class="control" *ngFor="let control of controlDefinitions">
+            <article>{{ control.id }}</article>
+            <aside>
+                <input type="text" *ngIf="isText(control)" formControlName="{{ control.id }}" />
+
+                <input type="number" *ngIf="isNumber(control)" formControlName="{{ control.id }}" />
+
+                <input type="checkbox" *ngIf="isBoolean(control)" formControlName="{{ control.id }}" />
+            </aside>
+        </div>
+    </section>
+</div>
