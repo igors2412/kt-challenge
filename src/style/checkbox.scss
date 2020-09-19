@@ -1,0 +1,30 @@
+@use './colors.scss';
+
+input[type='checkbox'] {
+    height: 28px;
+    width: 28px;
+    appearance: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 2px solid colors.$input-active-shadow;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s background-color;
+
+    &:checked {
+        color: white;
+        background-color: colors.$input-active-shadow;
+        border-color: colors.$input-active-shadow;
+
+        &:before {
+            content: 'done';
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Material Icons';
+        }
+    }
+}

@@ -1,1 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
+@use './style/common.scss';
+@use './style/input.scss';
+@use './style/checkbox.scss';

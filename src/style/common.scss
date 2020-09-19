@@ -1,0 +1,9 @@
+@use './colors.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: colors.$body-bg;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}

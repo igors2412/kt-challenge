@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     controlDefinitions: IControlDefinition[];
 
     ngOnInit(): void {
-        this.controlDefinitions = toControlDefinitions(TestObjects.T1);
+        this.controlDefinitions = toControlDefinitions(TestObjects.T7);
         this.form = new FormGroup(this.generateControls(this.controlDefinitions));
     }
 

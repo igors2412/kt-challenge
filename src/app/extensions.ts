@@ -4,10 +4,12 @@ function flattenObject(o: any): any {
     let flat = {};
 
     Object.keys(o).forEach((key) => {
-        if (typeof o[key] === 'object' && o[key] !== null) {
-            flat = { ...flat, ...flattenObject(o[key]) };
+        const current = o[key];
+
+        if (typeof current === 'object' && current !== null) {
+            flat = { ...flat, ...flattenObject(current) };
         } else {
-            flat[key] = o[key];
+            flat[key] = current;
         }
     });
 
