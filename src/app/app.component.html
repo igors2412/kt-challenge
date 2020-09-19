@@ -4,9 +4,13 @@
             <article>Select a sample object to render.</article>
             <article>The object value will be output to the browser console.</article>
         </div>
-        <select [ngModel]="currentObject" (ngModelChange)="selectSampleObject($event)">
-            <option *ngFor="let sample of samples; let i = index" [ngValue]="sample">Test object {{ i + 1 }}</option>
-        </select>
+        <div>
+            <select [ngModel]="currentObject" (ngModelChange)="selectSampleObject($event)">
+                <option *ngFor="let sample of samples; let i = index" [ngValue]="sample">
+                    Test object {{ i + 1 }}
+                </option>
+            </select>
+        </div>
     </section>
 
     <section class="form" [formGroup]="form">
