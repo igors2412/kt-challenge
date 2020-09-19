@@ -1,4 +1,12 @@
 svg {
     margin-top: 24px;
     height: 600px;
+
+    @media (max-width: 1024px) {
+        height: 460px;
+    }
+
+    @media (max-width: 767px) {
+        height: 236px;
+    }
 }
