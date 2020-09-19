@@ -1,6 +1,16 @@
 <div class="app" *ngIf="controlDefinitions">
+    <section class="header">
+        <div>
+            <article>Select a sample object to render.</article>
+            <article>The object value will be output to the browser console.</article>
+        </div>
+        <select [ngModel]="currentObject" (ngModelChange)="selectSampleObject($event)">
+            <option *ngFor="let sample of samples; let i = index" [ngValue]="sample">Test object {{ i + 1 }}</option>
+        </select>
+    </section>
+
     <section class="form" [formGroup]="form">
-        <div class="control" *ngFor="let control of controlDefinitions">
+        <div class="control" *ngFor="let control of controlDefinitions" [class.bool]="isBoolean(control)">
             <article>{{ control.id }}</article>
             <aside>
                 <input type="text" *ngIf="isText(control)" formControlName="{{ control.id }}" />
@@ -10,5 +20,10 @@
                 <input type="checkbox" *ngIf="isBoolean(control)" formControlName="{{ control.id }}" />
             </aside>
         </div>
+    </section>
+
+    <section class="empty" *ngIf="isEmpty">
+        <article>The selected object has no values.</article>
+        <app-empty></app-empty>
     </section>
 </div>

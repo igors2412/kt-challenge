@@ -30,6 +30,7 @@ export const T5 = {
             c: {
                 x: 56,
             },
+            d: 'asdfg',
         },
     },
 };

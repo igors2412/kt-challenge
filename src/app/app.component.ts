@@ -12,9 +12,22 @@ import * as TestObjects from './test-data';
 export class AppComponent implements OnInit {
     form: FormGroup;
     controlDefinitions: IControlDefinition[];
+    currentObject = TestObjects.T7;
+
+    get samples(): any[] {
+        return Array.from({ length: 7 }, (__, i) => {
+            return i + 1;
+        }).map((i) => {
+            return TestObjects[`T${i}`];
+        });
+    }
+
+    get isEmpty(): boolean {
+        return this.controlDefinitions.length === 0;
+    }
 
     ngOnInit(): void {
-        this.controlDefinitions = toControlDefinitions(TestObjects.T7);
+        this.controlDefinitions = toControlDefinitions(this.currentObject);
         this.form = new FormGroup(this.generateControls(this.controlDefinitions));
     }
 
@@ -35,5 +48,11 @@ export class AppComponent implements OnInit {
 
     isNumber(def: IControlDefinition): boolean {
         return def.type === 'number' || def.type === 'bigint';
+    }
+
+    selectSampleObject(o: any): void {
+        this.currentObject = o;
+        console.log(o);
+        this.ngOnInit();
     }
 }
