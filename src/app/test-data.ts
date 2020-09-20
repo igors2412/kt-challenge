@@ -22,6 +22,11 @@ export const T3 = {
 
 export const T4 = {
     a: 'yolosaurus',
+    b: 123,
+    c: true,
+    d: 1000000000000000,
+    e: false,
+    f: true,
 };
 
 export const T5 = {
