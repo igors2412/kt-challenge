@@ -12,7 +12,7 @@ import * as TestObjects from './test-data';
 export class AppComponent implements OnInit {
     form: FormGroup;
     controlDefinitions: IControlDefinition[];
-    currentObject = TestObjects.T7;
+    currentObject: any = TestObjects.T7;
 
     get samples(): any[] {
         return Array.from({ length: 7 }, (__, i) => {
