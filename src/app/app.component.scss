@@ -17,6 +17,15 @@
         padding: 16px;
     }
 
+    .empty {
+        display: flex;
+        flex-direction: column;
+
+        app-empty {
+            align-self: center;
+        }
+    }
+
     .header {
         margin-bottom: 64px;
         display: flex;
